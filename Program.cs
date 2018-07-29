@@ -16,21 +16,26 @@ namespace Capstone1
             {
 
                 Console.WriteLine("Please enter a sentence"); // user input
+
                 string input = Console.ReadLine().ToLower().Trim(); // reading the user input and storing it in the variable input; changing it to lower case and also removing the spaces
+
                 String[] arrayOfCharrs = input.Split(new char[] { ' ' }); // spliting the input based on space and storing them into array
+
                 String pigLatin = ""; // declaring pigLatin variable with empty value
 
                 foreach (string character in arrayOfCharrs) // looping through the each word in the array
                 {
                     String firstWord = character; // declaring variable
+
                     char FirstLetter = firstWord[0]; // accessing and saving first letter of the word of the user input
 
                     firstWord = firstWord.Remove(0, 1); // removing the first character of the word
-                    firstWord = firstWord.Insert(firstWord.Length, FirstLetter.ToString()); // inserting first letter at the end of the  word.for eg(ailus)
+
+                    firstWord = firstWord.Insert(firstWord.Length, FirstLetter.ToString()); // inserting first letter at the end of the  word.for eg elloh
 
                     if (IsVowel(FirstLetter)) // invoking the method to check if first letter is vowel
                     {
-                        firstWord = firstWord.Insert(firstWord.Length, "way"); // if it's a vowel, adding "way" 
+                        firstWord = character.Insert(firstWord.Length, "way"); // if it's a vowel, adding "way" 
                     }
                     else
                     {
